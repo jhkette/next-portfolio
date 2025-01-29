@@ -4,15 +4,13 @@ import HomePage from "./HomePage"
 // import { database } from "@/firebase"
 
 async function getData() {
-
-  // return await (await get(ref(database))).val()
-
-  const DB_URL = process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL + '/.json'
-  const res = await fetch(DB_URL, { cache: 'no-store' })
-  const data = res.json()
-  return data
+  const res = await fetch("http://localhost:3000/data.json", { cache: "no-store" });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  const data = await res.json();
+  return data;
 }
-
 export default async function page() {
 
   const data = await getData()
