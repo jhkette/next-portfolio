@@ -1,6 +1,6 @@
 {
   "main": {
-    "name": "Jhon Doe",
+    "name": "Joseph",
     "shortDesc": "I focus on developing user-friendly web applications that meet the client's requirements, with attention to detail, scalability, and performance.",
     "titles": [
       "Frontend Development",
@@ -24,21 +24,10 @@
     "resumeUrl": ""
   },
   "socials": [
-    {
-      "icon": "FaLinkedin",
-      "link": "https://www.linkedin.com/in/jhon-doe"
-    },
+
     {
       "icon": "FaGithub",
       "link": "https://github.com/jhon-doe"
-    },
-    {
-      "icon": "FaInstagram",
-      "link": "https://www.instagram.com/jhondoe"
-    },
-    {
-      "icon": "FaTwitter",
-      "link": "https://twitter.com/jhondoe"
     }
   ],
   "skills": [
