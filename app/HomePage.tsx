@@ -16,6 +16,7 @@ interface Props {
 }
 
 const HomePage = ({ data }: Props) => {
+    console.log(data)
     return (
         <>
             <Header logo={data.main.name} />

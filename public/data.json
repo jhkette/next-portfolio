@@ -39,6 +39,30 @@
       "name": "Firebase",
       "image": "https://img.icons8.com/color/144/null/firebase.png",
       "category": "Backend"
+    },   {
+      "name": "Typescript",
+      "image": "https://img.icons8.com/color/144/null/typescript--v1.png",
+      "category": "Frontend"
+    },
+    {
+      "name": "PHP",
+      "image": "https://img.icons8.com/color/144/null/php.png",
+      "category": "Backend"
+    },
+    {
+      "name": "Python",
+      "image": "https://img.icons8.com/color/144/null/python.png",
+      "category": "Backend"
+    },
+    {
+      "name": "Java",
+      "image": "https://img.icons8.com/?size=100&id=13679&format=png&color=000000",
+      "category": "Backend"
+    },
+    {
+      "name": "SQL",
+      "image": "https://img.icons8.com/color/144/null/sql.png",
+      "category": "Backend"
     },
     {
       "name": "GitHub",

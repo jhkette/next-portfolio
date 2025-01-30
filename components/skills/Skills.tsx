@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Skills = ({ skillData }: Props) => {
-
+    console.log(skillData)
     const categories = Array.from(new Set(skillData.map((s: { category: any; }) => s.category)))
     const [category, setCategory] = useState(categories[0])
 
