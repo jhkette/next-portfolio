@@ -68,9 +68,9 @@ export const data = {
         degree: "B.Tech CSE",
         duration: "2016 - 2020",
         desc: [
-          "Pursuing IT Engineering course from ABC University",
-          "Worked on web application development using HTML, CSS, and JavaScript, designing a database system using SQL",
-          "Familiar with software development methodologies and project management practices, including Agile and Waterfall methodologies."
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.."
         ]
       }
     ],
@@ -80,9 +80,9 @@ export const data = {
         position: "Web Developer",
         duration: "2020 -2022",
         desc: [
-          "Assisted with design and development of project.",
-          "Worked on building the product from scratch and built multiple dashboards.",
-          "Skills: HTML · CSS · JavaScript · TailwindCSS · ReactJS · NodeJS · MySQL · REST APIs"
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
         ]
       },
       {
@@ -90,9 +90,9 @@ export const data = {
         position: "Web Developer",
         duration: "2022 - present",
         desc: [
-          "Assisted with design and development of project.",
-          "Worked on building the product from scratch and built multiple dashboards.",
-          "Skills: HTML · CSS · JavaScript · TailwindCSS · ReactJS · NodeJS · MySQL · REST APIs"
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
         ]
       }
     ]
