@@ -19,16 +19,14 @@ type project = {
 type experience = {
     company: string,
     position: string,
-    startDate: string,
-    endDate: string,
+    duration: string,
     desc: string[]
 }
 
 type education = {
     institute: string,
     degree: string,
-    startDate: string,
-    endDate: string,
+    duration: string,
 }
 
 type main = {
