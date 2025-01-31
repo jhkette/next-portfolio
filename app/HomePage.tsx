@@ -7,7 +7,6 @@ import Projects from "@/components/projects/Projects";
 import Socials from "@/components/Socials";
 import Experiences from "@/components/experiences/Experiences";
 import Contact from "@/components/Contact";
-
 import Header from "./Header";
 import Footer from "./Footer";
 
