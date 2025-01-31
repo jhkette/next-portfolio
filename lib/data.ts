@@ -1,7 +1,7 @@
 export const data = {
     main: {
       name: "Joseph",
-      shortDesc: "I focus on developing user-friendly web applications that meet the client's requirements, with attention to detail, scalability, and performance.",
+      shortDesc: "Mauris interdum libero nec risus congue facilisis. Curabitur tincidunt in arcu eget ullamcorper. Vivamus vel nibh pretium, fringilla diam non, dapibus ligula. Nam dictum venenatis nunc, ac suscipit purus vehicula et. Quisque iaculis rhoncus imperdiet. Nam sapien sapien, ornare eu magna quis, ultricies maximus dui. Vestibulum id euismod lorem. Praesent nulla enim, tincidunt nec tellus facilisis, vehicula dignissim mi.",
       titles: ["Frontend Development", "Backend Development"],
       heroImage: "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg",
       techStackImages: [
@@ -15,7 +15,7 @@ export const data = {
       aboutImage: "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg",
       aboutImageCaption: "< I build stuff 🚀/>",
       title: "Full Stack Developer",
-      about: "I am a Full-Stack developer based in Pune, India. I'm an Information Technology undergraduate from SPPU, and my journey in web development began during my first year of college. I'm passionate about creating beautiful, functional, and user-friendly websites and applications, and I'm constantly pushing myself to learn and grow as a developer. Love building full-stack clones and side projects.",
+      about: "Mauris interdum libero nec risus congue facilisis. Curabitur tincidunt in arcu eget ullamcorper. Vivamus vel nibh pretium, fringilla diam non, dapibus ligula. Nam dictum venenatis nunc, ac suscipit purus vehicula et. Quisque iaculis rhoncus imperdiet. Nam sapien sapien, ornare eu magna quis, ultricies maximus dui. Vestibulum id euismod lorem. Praesent nulla enim, tincidunt nec tellus facilisis, vehicula dignissim mi.",
       callUrl: "",
       resumeUrl: ""
     },
