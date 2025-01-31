@@ -1,17 +1,9 @@
 import { FaNodeJs } from "react-icons/fa";
 import HomePage from "./HomePage";
 // import { ref, get } from "firebase/database"
-import { ref, onValue } from "firebase/database";
-import { database } from "@/lib/firebase";
+import { getData } from "@/lib/getData";
 
-async function getData() {
-  const dataRef = ref(database, "/");
-  let data;
-  onValue(dataRef, (snapshot) => {
-    data = snapshot.val();
-  });
-  return data;
-}
+
 export default async function page() {
   const data = await getData();
 
