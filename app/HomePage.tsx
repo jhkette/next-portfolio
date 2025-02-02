@@ -13,7 +13,7 @@ import Footer from "./Footer";
 interface Props {
   data: data;
 }
-
+ 
 const HomePage = ({ data }: Props) => {
   console.log(data);
   return (
