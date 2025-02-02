@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import sgMail from "@sendgrid/mail";
+
 
 import { transporter } from "@/lib/transporter";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
+
 
 type Data = {
   message: string;
