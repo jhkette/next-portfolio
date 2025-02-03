@@ -10,3 +10,8 @@ export const DESCRIPTION_QUERY =
 defineQuery(`*[_type == "description" && name == "Joseph"]{
 _id, name, description, 
 }`);
+
+export const ABOUT_QUERY = 
+defineQuery(`*[_type == "about" && aboutTitle == "Full Stack Developer"]{
+_id,  about, aboutImage, aboutTitle
+}`);

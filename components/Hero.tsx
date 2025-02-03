@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Link as ScrollLink } from 'react-scroll'
 import Typewriter from 'typewriter-effect';
@@ -7,24 +8,32 @@ import wavingHand from '@/public/waving-hand.gif';
 import { main } from '@/types/main';
 import { DESCRIPTION_QUERYResult } from '@/sanity.types';
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
-
+import { cn } from '@/lib/utils';
 interface HeroProps {
     mainData: main,
       description:DESCRIPTION_QUERYResult
 }
 
 const Hero = ({ mainData, description }: HeroProps) => {
-
+    const { theme } = useTheme()
+     const [isClient, setIsClient] = useState(false)
+     
+        useEffect(() => {
+          setIsClient(true)
+        }, [])
     const components :Partial<PortableTextReactComponents> = {
         block: {
-          normal: ({ children }) => <p className="text-sm md:text-base text-gray-600 dark:text-gray-300'">{children}</p>,
+          normal: ({ children }) => <p className={cn(
+            "text-sm md:text-base ",
+            theme === "dark" ? "text-gray-300" : "text-gray-800"
+          )}>{children}</p>,
           h1: ({ children }) => <h1 className="text-3xl font-bold">{children}</h1>,
           h2: ({ children }) => <h2 className="text-2xl font-semibold">{children}</h2>,
         },
         
       };
 
-    const { theme } = useTheme()
+   
     const { name, titles, heroImage, shortDesc, techStackImages } = mainData
 
     console.log(description)
@@ -64,12 +73,12 @@ const Hero = ({ mainData, description }: HeroProps) => {
                         />
                     </div>
 
-                    <p className='text-sm md:text-base text-gray-600 dark:text-gray-300'>
+                    {/* <p className='text-sm md:text-base text-gray-600 dark:text-gray-300'>
                         {shortDesc}
-                    </p>
+                    </p> */}
 
                   
-                       {description[0]?.description &&<PortableText  value={description[0].description} components={components}/>}
+                       {description[0]?.description && theme && isClient && <PortableText  value={description[0].description} components={components}/>}
                     
 
                     <ScrollLink

@@ -9,21 +9,22 @@ import Experiences from "@/components/experiences/Experiences";
 import ContactForm from "@/components/ContactForm";
 import Header from "./Header";
 import Footer from "./Footer";
-import { DESCRIPTION_QUERYResult } from "@/sanity.types";
+import { DESCRIPTION_QUERYResult, ABOUT_QUERYResult } from "@/sanity.types";
 interface Props {
   data: data;
   description:DESCRIPTION_QUERYResult
+  about: ABOUT_QUERYResult
 }
  
-const HomePage = ({ data , description}: Props) => {
-  console.log(data);
-  
+const HomePage = ({ data , description, about}: Props) => {
+  console.log(about, "THIS IS ABOUT");
+
   return (
     <>
       <Header logo={data.main.name} />
       <Hero mainData={data.main} description={description} />
       <Socials socials={data.socials} />
-      <About aboutData={data.about} name={data.main.name} />
+      <About aboutData={data.about} name={data.main.name} aboutSanity={about} />
       <Skills skillData={data.skills} />
       <Projects projectsData={data.projects} />
       <Experiences

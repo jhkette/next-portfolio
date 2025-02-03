@@ -3,17 +3,18 @@ import HomePage from "./HomePage";
 // import { ref, get } from "firebase/database"
 import {data} from "@/lib/data"
 import {client} from "@/sanity/lib/client"
-import { DESCRIPTION_QUERY, POSTS_QUERY } from "@/sanity/queries";
+import { DESCRIPTION_QUERY, ABOUT_QUERY } from "@/sanity/queries";
 
 
 export default async function page() {
  
   const description = await client.fetch(DESCRIPTION_QUERY);
-  // console.log(faqsAccount)
+  const about = await client.fetch(ABOUT_QUERY);
+  console.log(about, "THIS IS ABOUT")
   return (
     <>
-      {data && description ? (
-        <HomePage data={data} description={description} />
+      {data && description && about ? (
+        <HomePage data={data} description={description} about={about} />
       ) : (
         <div className="h-screen w-screen flex flex-col items-center justify-center gap-5 text-blue-600 fixed z-30 bg-gray-100 dark:bg-grey-900">
           {/* <FaNodeJs size={100} className="animate-pulse" /> */}
