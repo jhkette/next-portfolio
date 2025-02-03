@@ -9,7 +9,7 @@ import { FaNodeJs } from 'react-icons/fa'
 import { CgClose, CgMenuRight } from 'react-icons/cg'
 
 export default function Header({ logo }: { logo: string }) {
-
+    const [isClient, setIsClient] = useState(false)
     const [navCollapse, setNavCollapse] = useState(true)
     const [scroll, setScroll] = useState(false)
     const { theme, setTheme } = useTheme()
@@ -19,9 +19,11 @@ export default function Header({ logo }: { logo: string }) {
             window.scrollY >= 90 ? setScroll(true) : setScroll(false)
         }
         window.addEventListener('scroll', updateScroll)
+        setIsClient(true)
     }, [])
 
-
+   
+ 
     const navs = ['home', 'about', 'projects', 'experience', 'contact']
 
     return (
@@ -47,22 +49,24 @@ export default function Header({ logo }: { logo: string }) {
                             </ScrollLink>
                         </li>
                     ))}
+                    {isClient && theme &&
                     <span
                         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                         className='hover:bg-gray-100 hover:dark:bg-blue-700 p-1.5 rounded-full cursor-pointer transition-colors'>
                         {theme === 'dark' ? <FiSun /> : <FiMoon />}
-                    </span>
+                    </span>}
                 </ul>
             </nav>
 
             <nav className='p-4 flex sm:hidden items-center justify-between'>
                 {logo === 'Jigar Sable' ? <FaNodeJs size={28} /> : <span className='text-lg font-medium'>{logo.split(' ')[0]}</span>}
                 <div className='flex items-center gap-4'>
+                {isClient && theme &&
                     <span
                         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                         className='bg-gray-100 dark:bg-blue-700 p-1.5 rounded-full cursor-pointer transition-colors'>
                         {theme === 'dark' ? <FiSun /> : <FiMoon />}
-                    </span>
+                    </span> }
                     <CgMenuRight size={20} onClick={() => setNavCollapse(false)} />
                 </div>
             </nav>

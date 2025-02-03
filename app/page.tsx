@@ -1,6 +1,5 @@
 import { FaNodeJs } from "react-icons/fa";
 import HomePage from "./HomePage";
-// import { ref, get } from "firebase/database"
 import {data} from "@/lib/data"
 import {client} from "@/sanity/lib/client"
 import { DESCRIPTION_QUERY, ABOUT_QUERY } from "@/sanity/queries";
