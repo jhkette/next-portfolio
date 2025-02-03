@@ -32,17 +32,9 @@ const Hero = ({ mainData, description }: HeroProps) => {
         },
         
       };
-
-   
     const { name, titles, heroImage, shortDesc, techStackImages } = mainData
-
-    console.log(description)
-
     return (
         <section id='home' className={`${theme === 'dark' && "bg-grey-900"} relative min-h-screen w-full mx-auto overflow-hidden`}>
-
-         
-
             <div className="py-16 lg:py-48 flex flex-col-reverse lg:flex-row justify-around gap-10 lg:gap-0">
 
                 <div className="flex flex-col gap-4 md:gap-6 text-left lg:w-1/2 2xl:w-1/3 mx-4 md:mx-6 xl:mx-0">
@@ -72,15 +64,9 @@ const Hero = ({ mainData, description }: HeroProps) => {
                             }}
                         />
                     </div>
-
-                    {/* <p className='text-sm md:text-base text-gray-600 dark:text-gray-300'>
-                        {shortDesc}
-                    </p> */}
-
                   
                        {description[0]?.description && theme && isClient && <PortableText  value={description[0].description} components={components}/>}
-                    
-
+        
                     <ScrollLink
                         className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 hover:dark:bg-blue-800 transition-colors group text-white"
                         to={'about'}
