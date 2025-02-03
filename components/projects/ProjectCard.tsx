@@ -33,7 +33,7 @@ const Project = ({
       <Dialog.Trigger asChild>
         <motion.div
         //@ts-ignore
-          className="flex flex-col gap-2 bg-white dark:bg-gray-800 rounded-lg p-4 cursor-pointer"
+          className="flex flex-col gap-2 bg-white dark:bg-gray-800 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:animate-[subtle-bounce_0.5s_ease-in-out] "
           ref={ref}
           variants={cardVariants}
           initial="hidden"
