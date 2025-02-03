@@ -7,6 +7,6 @@ _id, title, body, slug, publishedAt,  author->{name},
 
 
 export const DESCRIPTION_QUERY = 
-defineQuery(`*[_type == "description" && name == "joseph"]{
+defineQuery(`*[_type == "description" && name == "Joseph"]{
 _id, name, description, 
 }`);
