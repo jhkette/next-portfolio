@@ -2,15 +2,14 @@ import { FaNodeJs } from "react-icons/fa";
 import HomePage from "./HomePage";
 // import { ref, get } from "firebase/database"
 import {data} from "@/lib/data"
-
+import {client} from "@/sanity/lib/client"
+import { POSTS_QUERY } from "@/sanity/queries";
 
 
 export default async function page() {
  
-
-
- 
-
+  const faqsAccount = await client.fetch(POSTS_QUERY);
+  console.log(faqsAccount)
   return (
     <>
       {data ? (
