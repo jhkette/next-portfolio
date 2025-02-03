@@ -1,5 +1,5 @@
-import {TagIcon} from '@sanity/icons'
-import {defineField, defineType} from 'sanity'
+import { TagIcon } from '@sanity/icons'
+import { defineField, defineType } from 'sanity'
 
 export const skillType = defineType({
   name: 'skill',
@@ -10,21 +10,22 @@ export const skillType = defineType({
     defineField({
       name: 'skill',
       type: 'string',
+      title: 'Skill Name',
     }),
     defineField({
       name: 'image',
       type: 'string',
-      
+      title: 'Image URL',
     }),
     defineField({
       name: 'category',
-      type: 'text',
-      description: "Select the type of skill below",
+      type: 'string', // Changed from 'text' to 'string' for dropdown functionality
+      title: 'Category',
+      description: 'Select the type of skill below',
       options: {
         list: [
           { title: 'Frontend', value: 'frontend' },
           { title: 'Backend', value: 'backend' },
-        
         ],
       },
     }),
