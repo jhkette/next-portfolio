@@ -249,6 +249,10 @@ export type Project = {
     alt?: string;
     _type: "image";
   };
+  link?: {
+    code?: string;
+    visit?: string;
+  };
 };
 
 export type BlockContent = Array<{
@@ -342,9 +346,6 @@ export type SanityImageMetadata = {
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | Experience | Eduction | Skill | About | Description | Project | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/queries.ts
-// Variable: POSTS_QUERY
-// Query: *[_type == "post" && defined(slug.current)]|order(publishedAt desc){_id, title, body, slug, publishedAt,  author->{name}, }
-export type POSTS_QUERYResult = Array<never>;
 // Variable: DESCRIPTION_QUERY
 // Query: *[_type == "description" && name == "Joseph"]{_id, name, description, }
 export type DESCRIPTION_QUERYResult = Array<{
@@ -455,16 +456,69 @@ export type EXPERIENCE_QUERYResult = Array<{
   duration: string | null;
   desc: Array<string> | null;
 }>;
+// Variable: PROJECT_QUERY
+// Query: *[_type == "project"]{    _id,    projectName,    techstack,    description,    projectImage,    link { code, visit }  }
+export type PROJECT_QUERYResult = Array<{
+  _id: string;
+  projectName: string | null;
+  techstack: string | null;
+  description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }> | null;
+  projectImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  link: {
+    code: string | null;
+    visit: string | null;
+  } | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc){\n_id, title, body, slug, publishedAt,  author->{name}, \n}": POSTS_QUERYResult;
     "*[_type == \"description\" && name == \"Joseph\"]{\n_id, name, description, \n}": DESCRIPTION_QUERYResult;
     "*[_type == \"about\" && aboutTitle == \"Full Stack Developer\"]{\n_id,  about, aboutImage, aboutTitle\n}": ABOUT_QUERYResult;
     "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
     "*[_type == \"eduction\"]{\n_id,  institute, degree, duration, desc\n}": EDUCATION_QUERYResult;
     "*[_type == \"experience\"]{\n_id,  company, position, duration, desc\n}": EXPERIENCE_QUERYResult;
+    "*[_type == \"project\"]{\n    _id,\n    projectName,\n    techstack,\n    description,\n    projectImage,\n    link { code, visit }\n  }": PROJECT_QUERYResult;
   }
 }

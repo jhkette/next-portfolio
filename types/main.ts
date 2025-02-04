@@ -13,6 +13,7 @@ type project = {
         visit: string,
         code: string,
         video: string
+       
     }
 }
 

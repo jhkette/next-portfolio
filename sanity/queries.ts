@@ -1,10 +1,5 @@
 
 import { defineQuery } from "next-sanity";
-export const POSTS_QUERY = 
-defineQuery(`*[_type == "post" && defined(slug.current)]|order(publishedAt desc){
-_id, title, body, slug, publishedAt,  author->{name}, 
-}`);
-
 
 export const DESCRIPTION_QUERY = 
 defineQuery(`*[_type == "description" && name == "Joseph"]{
@@ -33,6 +28,14 @@ defineQuery(`*[_type == "experience"]{
 _id,  company, position, duration, desc
 }`);
 
+export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
+    _id,
+    projectName,
+    techstack,
+    description,
+    projectImage,
+    link { code, visit }
+  }`);
 
 
 

@@ -3,12 +3,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
-
+import { PROJECT_QUERYResult } from "@/sanity.types";
 interface Props {
     projectsData: project[]
+    projectSanity: PROJECT_QUERYResult
 }
 
-const Projects = ({ projectsData }: Props) => {
+const Projects = ({ projectsData, projectSanity }: Props) => {
+
+    console.log(projectSanity)
 
     const [projects, setProjects] = useState([...projectsData].reverse() as project[])
 

@@ -1,7 +1,5 @@
-
-
 import { DocumentTextIcon } from "@sanity/icons";
-import {  defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity";
 
 export const projectType = defineType({
   name: "project",
@@ -13,16 +11,14 @@ export const projectType = defineType({
       name: "projectName",
       type: "string",
     }),
-
     defineField({
       name: "techstack",
       type: "string",
     }),
     defineField({
-        name: "description",
-        type: "blockContent",
-      }),
-
+      name: "description",
+      type: "blockContent",
+    }),
     defineField({
       name: "projectImage",
       type: "image",
@@ -34,6 +30,23 @@ export const projectType = defineType({
           name: "alt",
           type: "string",
           title: "Alternative text",
+        }),
+      ],
+    }),
+    defineField({
+      name: "link",
+      title: "Project Links",
+      type: "object",
+      fields: [
+        defineField({
+          name: "code",
+          type: "url",
+          title: "Code Repository",
+        }),
+        defineField({
+          name: "visit",
+          type: "url",
+          title: "Live Project",
         }),
       ],
     }),
