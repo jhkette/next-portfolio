@@ -446,6 +446,15 @@ export type EDUCATION_QUERYResult = Array<{
   duration: string | null;
   desc: Array<string> | null;
 }>;
+// Variable: EXPERIENCE_QUERY
+// Query: *[_type == "experience"]{_id,  company, position, duration, desc}
+export type EXPERIENCE_QUERYResult = Array<{
+  _id: string;
+  company: string | null;
+  position: string | null;
+  duration: string | null;
+  desc: Array<string> | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -456,5 +465,6 @@ declare module "@sanity/client" {
     "*[_type == \"about\" && aboutTitle == \"Full Stack Developer\"]{\n_id,  about, aboutImage, aboutTitle\n}": ABOUT_QUERYResult;
     "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
     "*[_type == \"eduction\"]{\n_id,  institute, degree, duration, desc\n}": EDUCATION_QUERYResult;
+    "*[_type == \"experience\"]{\n_id,  company, position, duration, desc\n}": EXPERIENCE_QUERYResult;
   }
 }

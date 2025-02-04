@@ -28,4 +28,12 @@ _id,  institute, degree, duration, desc
 }`);
 
 
+export const EXPERIENCE_QUERY = 
+defineQuery(`*[_type == "experience"]{
+_id,  company, position, duration, desc
+}`);
+
+
+
+
 

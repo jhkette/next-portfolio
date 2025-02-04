@@ -9,16 +9,17 @@ import Experiences from "@/components/experiences/Experiences";
 import ContactForm from "@/components/ContactForm";
 import Header from "./Header";
 import Footer from "./Footer";
-import { DESCRIPTION_QUERYResult, ABOUT_QUERYResult, SKILL_QUERYResult, EDUCATION_QUERYResult } from "@/sanity.types";
+import { DESCRIPTION_QUERYResult, ABOUT_QUERYResult, SKILL_QUERYResult, EDUCATION_QUERYResult, EXPERIENCE_QUERYResult } from "@/sanity.types";
 interface Props {
   data: data;
   description: DESCRIPTION_QUERYResult;
   about: ABOUT_QUERYResult;
   skills: SKILL_QUERYResult,
   education: EDUCATION_QUERYResult
+  experience: EXPERIENCE_QUERYResult
 }
 
-const HomePage = ({ data, description, about, skills, education }: Props) => {
+const HomePage = ({ data, description, about, skills, education , experience}: Props) => {
  
 
   return (
@@ -31,7 +32,7 @@ const HomePage = ({ data, description, about, skills, education }: Props) => {
       <Projects projectsData={data.projects} />
       <Experiences
         experienceData={data.experiences}
-      
+        experienceSanity={experience}
         educationSanity={education}
       />
       <ContactForm />
