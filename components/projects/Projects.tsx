@@ -38,11 +38,7 @@ const Projects = ({ projectsData, projectSanity }: Props) => {
     );
   };
 
-  useEffect(() => {
-    filterProjects(
-      categories.includes("MERN Stack") ? "MERN Stack" : categories[0] || ""
-    );
-  });
+
 
   return (
     <SectionWrapper id="projects" className="mx-4 md:mx-0 min-h-screen">
