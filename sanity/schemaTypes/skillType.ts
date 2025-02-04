@@ -24,8 +24,9 @@ export const skillType = defineType({
       description: 'Select the type of skill below',
       options: {
         list: [
-          { title: 'Frontend', value: 'frontend' },
-          { title: 'Backend', value: 'backend' },
+          { title: 'Frontend', value: 'Frontend' },
+          { title: 'Backend', value: 'Backend' },
+          { title: 'Tools', value: 'Tools' },
         ],
       },
     }),
