@@ -24,7 +24,7 @@ _id,  skill, image, category
 
 export const EDUCATION_QUERY = 
 defineQuery(`*[_type == "eduction"]{
-_id,  institute, degree, duration
+_id,  institute, degree, duration, desc
 }`);
 
 

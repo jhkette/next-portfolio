@@ -19,7 +19,7 @@ interface Props {
 }
 
 const HomePage = ({ data, description, about, skills, education }: Props) => {
-  console.log(education, "THIS IS skills");
+ 
 
   return (
     <>
@@ -31,7 +31,8 @@ const HomePage = ({ data, description, about, skills, education }: Props) => {
       <Projects projectsData={data.projects} />
       <Experiences
         experienceData={data.experiences}
-        educationData={data.educations}
+      
+        educationSanity={education}
       />
       <ContactForm />
       <Footer socials={data.socials} name={data.main.name} />

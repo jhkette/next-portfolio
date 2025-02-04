@@ -3,19 +3,22 @@ import { useState } from "react"
 import { ViewAll } from "../projects/Projects"
 import SectionWrapper from "../SectionWrapper"
 import ExperienceCard from "./ExperienceCard"
+import { EDUCATION_QUERYResult } from "@/sanity.types"
 
 interface Props {
     experienceData: experience[]
-    educationData: education[]
+    educationSanity: EDUCATION_QUERYResult
 }
 
-const Experiences = ({ experienceData, educationData }: Props) => {
+const Experiences = ({ experienceData,  educationSanity }: Props) => {
 
     const [show, setShow] = useState("Experience")
     const [viewAll, setViewAll] = useState(false)
 
+    console.log(educationSanity, "THIS IS EDUCATION")
+
     const [experiences, setExperiences] = useState([...experienceData].reverse() as experience[])
-    const [educations, setEducations] = useState([...educationData].reverse() as education[])
+    const [educations, setEducations] = useState([...educationSanity].reverse() as education[])
 
     return (
         <SectionWrapper id="experience" className="min-h-screen">
