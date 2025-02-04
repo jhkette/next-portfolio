@@ -2,14 +2,15 @@ import { useState } from 'react';
 import { skill } from '@/types/main';
 import SkillCard from "./SkillCard"
 import SectionWrapper from '../SectionWrapper';
-
+import {SKILL_QUERYResult } from "@/sanity.types";
 interface Props {
-    skillData: skill[]
+ 
+    skillsList: SKILL_QUERYResult
 }
 
-const Skills = ({ skillData }: Props) => {
-    console.log(skillData)
-    const categories = Array.from(new Set(skillData.map((s: { category: any; }) => s.category)))
+const Skills = ({  skillsList }: Props) => {
+  
+    const categories = Array.from(new Set(skillsList.map((s: { category: any; }) => s.category)))
     const [category, setCategory] = useState(categories[0])
 
     return (
@@ -23,7 +24,7 @@ const Skills = ({ skillData }: Props) => {
             </div>
 
             <div className="lg:w-3/4 2xl:w-3/5 my-8 mx-auto md:px-12 grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 place-items-center gap-8">
-                {skillData.filter((s: skill) => s.category.toLowerCase() === category.toLowerCase()).map((s: any, i: number) => (
+                { skillsList.filter((s: SKILL_QUERYResult[number]) => s.category && s.category.toLowerCase() === category.toLowerCase()).map((s: any, i: number) => (
                     <SkillCard key={i} {...s} />
                 ))}
             </div>

@@ -68,6 +68,17 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Skill = {
+  _id: string;
+  _type: "skill";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  skill?: string;
+  image?: string;
+  category?: "Frontend" | "Backend" | "Tools";
+};
+
 export type About = {
   _id: string;
   _type: "about";
@@ -280,6 +291,58 @@ export type Slug = {
   source?: string;
 };
 
+export type Project = {
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  projectName?: string;
+  techstack?: string;
+  description?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+    listItem?: "bullet";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  }>;
+  projectImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+};
+
 export type BlockContent = Array<{
   children?: Array<{
     marks?: Array<string>;
@@ -368,7 +431,7 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | About | Description | Post | Author | Category | Slug | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Skill | About | Description | Post | Author | Category | Slug | Project | BlockContent | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/queries.ts
 // Variable: POSTS_QUERY
@@ -496,6 +559,14 @@ export type ABOUT_QUERYResult = Array<{
   } | null;
   aboutTitle: string | null;
 }>;
+// Variable: SKILL_QUERY
+// Query: *[_type == "skill"]{_id,  skill, image, category}
+export type SKILL_QUERYResult = Array<{
+  _id: string;
+  skill: string | null;
+  image: string | null;
+  category: "Backend" | "Frontend" | "Tools" | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -504,5 +575,6 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc){\n_id, title, body, slug, publishedAt,  author->{name}, \n}": POSTS_QUERYResult;
     "*[_type == \"description\" && name == \"Joseph\"]{\n_id, name, description, \n}": DESCRIPTION_QUERYResult;
     "*[_type == \"about\" && aboutTitle == \"Full Stack Developer\"]{\n_id,  about, aboutImage, aboutTitle\n}": ABOUT_QUERYResult;
+    "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
   }
 }

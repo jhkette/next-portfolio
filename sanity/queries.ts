@@ -15,3 +15,8 @@ export const ABOUT_QUERY =
 defineQuery(`*[_type == "about" && aboutTitle == "Full Stack Developer"]{
 _id,  about, aboutImage, aboutTitle
 }`);
+
+export const SKILL_QUERY = 
+defineQuery(`*[_type == "skill"]{
+_id,  skill, image, category
+}`);
