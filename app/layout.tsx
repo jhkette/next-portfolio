@@ -2,7 +2,7 @@
 import './globals.css'
 import { Poppins } from '@next/font/google'
 import { ThemeProvider } from "@/components/themeprovider"
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
   subsets: ['latin'],
