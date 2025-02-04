@@ -9,7 +9,7 @@ import Experiences from "@/components/experiences/Experiences";
 import ContactForm from "@/components/ContactForm";
 import Header from "./Header";
 import Footer from "./Footer";
-import { DESCRIPTION_QUERYResult, ABOUT_QUERYResult, SKILL_QUERYResult } from "@/sanity.types";
+import { DESCRIPTION_QUERYResult, ABOUT_QUERYResult, SKILL_QUERYResult,  } from "@/sanity.types";
 interface Props {
   data: data;
   description: DESCRIPTION_QUERYResult;
