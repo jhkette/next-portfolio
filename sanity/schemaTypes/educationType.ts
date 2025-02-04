@@ -22,6 +22,12 @@ export const educationType = defineType({
         name: 'duration',
         type: 'string',
         title: 'Duration',
+      }),
+      defineField({
+        name: 'desc',
+        type: 'array',
+        of: [{ type: 'string' }],
+        title: 'Description',
       })
   ],
 })

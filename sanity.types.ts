@@ -95,6 +95,7 @@ export type Eduction = {
   institute?: string;
   degree?: string;
   duration?: string;
+  desc?: Array<string>;
 };
 
 export type Skill = {
@@ -436,6 +437,14 @@ export type SKILL_QUERYResult = Array<{
   image: string | null;
   category: "Backend" | "Frontend" | "Tools" | null;
 }>;
+// Variable: EDUCATION_QUERY
+// Query: *[_type == "eduction"]{_id,  institute, degree, duration}
+export type EDUCATION_QUERYResult = Array<{
+  _id: string;
+  institute: string | null;
+  degree: string | null;
+  duration: string | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -445,5 +454,6 @@ declare module "@sanity/client" {
     "*[_type == \"description\" && name == \"Joseph\"]{\n_id, name, description, \n}": DESCRIPTION_QUERYResult;
     "*[_type == \"about\" && aboutTitle == \"Full Stack Developer\"]{\n_id,  about, aboutImage, aboutTitle\n}": ABOUT_QUERYResult;
     "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
+    "*[_type == \"eduction\"]{\n_id,  institute, degree, duration\n}": EDUCATION_QUERYResult;
   }
 }

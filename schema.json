@@ -478,6 +478,16 @@
           "type": "string"
         },
         "optional": true
+      },
+      "desc": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "string"
+          }
+        },
+        "optional": true
       }
     }
   },

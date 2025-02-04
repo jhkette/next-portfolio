@@ -20,3 +20,12 @@ export const SKILL_QUERY =
 defineQuery(`*[_type == "skill"]{
 _id,  skill, image, category
 }`);
+
+
+export const EDUCATION_QUERY = 
+defineQuery(`*[_type == "eduction"]{
+_id,  institute, degree, duration
+}`);
+
+
+
