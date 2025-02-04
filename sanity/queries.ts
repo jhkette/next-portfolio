@@ -34,6 +34,7 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
     techstack,
     description,
     projectImage,
+    category,
     link { code, visit }
   }`);
 

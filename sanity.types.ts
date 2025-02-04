@@ -207,6 +207,7 @@ export type Project = {
   _rev: string;
   projectName?: string;
   techstack?: string;
+  category?: string;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -457,7 +458,7 @@ export type EXPERIENCE_QUERYResult = Array<{
   desc: Array<string> | null;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project"]{    _id,    projectName,    techstack,    description,    projectImage,    link { code, visit }  }
+// Query: *[_type == "project"]{    _id,    projectName,    techstack,    description,    projectImage,    category,    link { code, visit }  }
 export type PROJECT_QUERYResult = Array<{
   _id: string;
   projectName: string | null;
@@ -504,6 +505,7 @@ export type PROJECT_QUERYResult = Array<{
     alt?: string;
     _type: "image";
   } | null;
+  category: string | null;
   link: {
     code: string | null;
     visit: string | null;
@@ -519,6 +521,6 @@ declare module "@sanity/client" {
     "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
     "*[_type == \"eduction\"]{\n_id,  institute, degree, duration, desc\n}": EDUCATION_QUERYResult;
     "*[_type == \"experience\"]{\n_id,  company, position, duration, desc\n}": EXPERIENCE_QUERYResult;
-    "*[_type == \"project\"]{\n    _id,\n    projectName,\n    techstack,\n    description,\n    projectImage,\n    link { code, visit }\n  }": PROJECT_QUERYResult;
+    "*[_type == \"project\"]{\n    _id,\n    projectName,\n    techstack,\n    description,\n    projectImage,\n    category,\n    link { code, visit }\n  }": PROJECT_QUERYResult;
   }
 }
