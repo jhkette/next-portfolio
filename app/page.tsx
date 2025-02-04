@@ -12,11 +12,7 @@ export default async function page() {
   const skills = await client.fetch(SKILL_QUERY);
   const education = await client.fetch(EDUCATION_QUERY);
   const experience = await client.fetch(EXPERIENCE_QUERY);
-  // education = education.map((edu: any) => ({
-  //   ...edu,
-  //   desc: edu.desc || []
-  // }));
-  // console.log(skills, "THIS IS ABOUT")
+
   return (
     <>
       {data && description && about ? (

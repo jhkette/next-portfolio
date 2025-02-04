@@ -6,18 +6,15 @@ import ExperienceCard from "./ExperienceCard"
 import { EDUCATION_QUERYResult, EXPERIENCE_QUERYResult } from "@/sanity.types"
 
 interface Props {
-    experienceData: experience[]
+ 
     educationSanity: EDUCATION_QUERYResult,
     experienceSanity: EXPERIENCE_QUERYResult
 }
 
-const Experiences = ({ experienceData,  educationSanity, experienceSanity }: Props) => {
+const Experiences = ({   educationSanity, experienceSanity }: Props) => {
 
     const [show, setShow] = useState("Experience")
     const [viewAll, setViewAll] = useState(false)
-
-    console.log(educationSanity, "THIS IS EDUCATION")
-
     const [experiences, setExperiences] = useState([...experienceSanity].reverse() as experience[])
     const [educations, setEducations] = useState([...educationSanity].reverse() as education[])
 

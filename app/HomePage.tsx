@@ -31,7 +31,7 @@ const HomePage = ({ data, description, about, skills, education , experience}: P
       <Skills  skillsList={skills}/>
       <Projects projectsData={data.projects} />
       <Experiences
-        experienceData={data.experiences}
+      
         experienceSanity={experience}
         educationSanity={education}
       />
