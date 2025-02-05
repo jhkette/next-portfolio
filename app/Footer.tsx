@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import * as Fa from 'react-icons/fa';
+import {FaGithub} from 'react-icons/fa';
 
 export default function Footer({ name }: { name: string }) {
 
@@ -35,7 +35,7 @@ export default function Footer({ name }: { name: string }) {
                         <Link href="https://github.com/jhkette" target="_blank" rel="noreferrer"  className="grid place-items-center p-3 rounded-full text-lg hover:bg-gray-100 hover:dark:bg-grey-900 transition-colors">
                             {
                                 // @ts-ignore
-                                React.createElement(Fa[`${s.icon}`])
+                                <FaGithub/>
                             }
                         </Link>
                 
