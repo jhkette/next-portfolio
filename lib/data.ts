@@ -11,14 +11,7 @@ export const data = {
         "https://img.icons8.com/color/144/000000/chakra-ui.png"
       ]
     },
-    about: {
-      aboutImage: "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg",
-      aboutImageCaption: "< I build stuff 🚀/>",
-      title: "Full Stack Developer",
-      about: "Mauris interdum libero nec risus congue facilisis. Curabitur tincidunt in arcu eget ullamcorper. Vivamus vel nibh pretium, fringilla diam non, dapibus ligula. Nam dictum venenatis nunc, ac suscipit purus vehicula et. Quisque iaculis rhoncus imperdiet. Nam sapien sapien, ornare eu magna quis, ultricies maximus dui. Vestibulum id euismod lorem. Praesent nulla enim, tincidunt nec tellus facilisis, vehicula dignissim mi.",
-      callUrl: "",
-      resumeUrl: ""
-    },
+  
     socials: [
       { 
         name: "Github",

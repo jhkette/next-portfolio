@@ -2,7 +2,7 @@ import { type SchemaTypeDefinition } from 'sanity'
 
 import {blockContentType} from './blockContentType'
 
-import { descriptionType } from './description'
+import { descriptionType } from './descriptionType'
 import {aboutType} from "./aboutType"
 import { skillType } from './skillType'
 import { projectType } from './projectType'
