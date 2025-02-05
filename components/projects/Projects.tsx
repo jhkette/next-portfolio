@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Projects = ({ projectsData, projectSanity }: Props) => {
-  console.log(projectSanity);
+
   const [projects, setProjects] = useState<PROJECT_QUERYResult>(
     [...projectSanity].reverse()
   );
