@@ -5,11 +5,10 @@ import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
 import { PROJECT_QUERYResult } from "@/sanity.types";
 interface Props {
-  projectsData: project[];
   projectSanity: PROJECT_QUERYResult;
 }
 
-const Projects = ({ projectsData, projectSanity }: Props) => {
+const Projects = ({ projectSanity }: Props) => {
 
   const [projects, setProjects] = useState<PROJECT_QUERYResult>(
     [...projectSanity].reverse()

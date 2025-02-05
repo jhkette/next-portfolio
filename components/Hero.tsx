@@ -10,11 +10,11 @@ import { DESCRIPTION_QUERYResult } from '@/sanity.types';
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import { cn } from '@/lib/utils';
 interface HeroProps {
-    mainData: main,
+  
       description:DESCRIPTION_QUERYResult
 }
 
-const Hero = ({ mainData, description }: HeroProps) => {
+const Hero = ({  description }: HeroProps) => {
     const { theme } = useTheme()
      const [isClient, setIsClient] = useState(false)
      

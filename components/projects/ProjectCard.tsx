@@ -20,7 +20,6 @@ const cardVariants = {
 const Project = ({
   projectName,
   projectImage,
-  category,
   techstack,
   link,
 }: PROJECT_QUERYResult[number] & HTMLMotionProps<"div">) => {
