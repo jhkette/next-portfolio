@@ -197,6 +197,8 @@ export type Description = {
     _type: "image";
     _key: string;
   }>;
+  titles?: Array<string>;
+  techStackImages?: Array<string>;
 };
 
 export type Project = {
@@ -348,7 +350,7 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/queries.ts
 // Variable: DESCRIPTION_QUERY
-// Query: *[_type == "description" && name == "Joseph"]{_id, name, description, }
+// Query: *[_type == "description" && name == "Joseph"]{_id, name, description, techStackImages, titles}
 export type DESCRIPTION_QUERYResult = Array<{
   _id: string;
   name: string | null;
@@ -382,6 +384,8 @@ export type DESCRIPTION_QUERYResult = Array<{
     _type: "image";
     _key: string;
   }> | null;
+  techStackImages: Array<string> | null;
+  titles: Array<string> | null;
 }>;
 // Variable: ABOUT_QUERY
 // Query: *[_type == "about" && aboutTitle == "Full Stack Developer"]{_id,  about, aboutImage, aboutTitle}
@@ -516,7 +520,7 @@ export type PROJECT_QUERYResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"description\" && name == \"Joseph\"]{\n_id, name, description, \n}": DESCRIPTION_QUERYResult;
+    "*[_type == \"description\" && name == \"Joseph\"]{\n_id, name, description, techStackImages, titles\n}": DESCRIPTION_QUERYResult;
     "*[_type == \"about\" && aboutTitle == \"Full Stack Developer\"]{\n_id,  about, aboutImage, aboutTitle\n}": ABOUT_QUERYResult;
     "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
     "*[_type == \"eduction\"]{\n_id,  institute, degree, duration, desc\n}": EDUCATION_QUERYResult;

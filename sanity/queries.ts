@@ -3,7 +3,7 @@ import { defineQuery } from "next-sanity";
 
 export const DESCRIPTION_QUERY = 
 defineQuery(`*[_type == "description" && name == "Joseph"]{
-_id, name, description, 
+_id, name, description, techStackImages, titles
 }`);
 
 export const ABOUT_QUERY = 
