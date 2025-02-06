@@ -1,17 +1,18 @@
 import { FaNodeJs } from "react-icons/fa";
 import HomePage from "./HomePage";
 import {client} from "@/sanity/lib/client"
+import { sanityFetch } from "@/sanity/lib/live"
 import { DESCRIPTION_QUERY, ABOUT_QUERY, SKILL_QUERY, EDUCATION_QUERY, EXPERIENCE_QUERY, PROJECT_QUERY } from "@/sanity/queries";
 
 
 export default async function page() {
  
-  const description = await client.fetch(DESCRIPTION_QUERY);
-  const about = await client.fetch(ABOUT_QUERY);
-  const skills = await client.fetch(SKILL_QUERY);
-  const education = await client.fetch(EDUCATION_QUERY);
-  const experience = await client.fetch(EXPERIENCE_QUERY);
-  const projects = await client.fetch(PROJECT_QUERY);
+  const {data: description} = await sanityFetch({query: DESCRIPTION_QUERY});
+  const {data: about} = await sanityFetch({query:ABOUT_QUERY});
+  const {data: skills} = await sanityFetch({query:SKILL_QUERY});
+  const {data: education} = await sanityFetch({query:EDUCATION_QUERY});
+  const {data: experience} = await sanityFetch({query:EXPERIENCE_QUERY});
+  const {data: projects} = await sanityFetch({query:PROJECT_QUERY});
 
   return (
     <>
