@@ -1,5 +1,5 @@
 "use client";
-import { data } from "@/types/main";
+
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/skills/Skills";

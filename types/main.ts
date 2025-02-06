@@ -54,14 +54,6 @@ type social = {
     link: string
 }
 
-type data = {
-    main: main,
-    about: about,
-    skills: skill[],
-    projects: project[],
-    experiences: experience[],
-    educations: education[]
-    socials: social[]
-}
 
-export type { data, main, about, skill, project, experience, education, social };
+
+export type {  main, about, skill, project, experience, education, social };
