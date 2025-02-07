@@ -1,6 +1,5 @@
 import { FaNodeJs } from "react-icons/fa";
 import HomePage from "./HomePage";
-import {client} from "@/sanity/lib/client"
 import { sanityFetch } from "@/sanity/lib/live"
 import { DESCRIPTION_QUERY, ABOUT_QUERY, SKILL_QUERY, EDUCATION_QUERY, EXPERIENCE_QUERY, PROJECT_QUERY } from "@/sanity/queries";
 
