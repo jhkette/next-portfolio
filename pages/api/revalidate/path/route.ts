@@ -37,3 +37,8 @@ export async function POST(req: NextRequest) {
     return new Response((err as Error).message, { status: 500 })
   }
 }
+
+export async function GET(req: NextRequest) {
+  console.log('revalidate path get ran')
+  return new Response('GET request not supported')
+}
