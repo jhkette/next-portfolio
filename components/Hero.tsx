@@ -5,7 +5,6 @@ import { Link as ScrollLink } from 'react-scroll'
 import Typewriter from 'typewriter-effect';
 import { IoIosArrowForward } from 'react-icons/io';
 import wavingHand from '@/public/waving-hand.gif';
-import { main } from '@/types/main';
 import { DESCRIPTION_QUERYResult } from '@/sanity.types';
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import { cn } from '@/lib/utils';
@@ -45,6 +44,7 @@ const Hero = ({  description }: HeroProps) => {
                             Hey
                         </p>
                     </div>
+                    
                     {description[0].name &&
                     <h1 className="text-4xl md:text-6xl font-bold relative">
                         I&apos;m {description[0].name }
@@ -66,7 +66,8 @@ const Hero = ({  description }: HeroProps) => {
                         />
                     </div>
                   
-                       {description[0]?.description && theme && isClient && <PortableText  value={description[0].description} components={components}/>}
+                       {description[0]?.description && theme && isClient &&
+                       <PortableText  value={description[0].description} components={components}/>}
         
                     <ScrollLink
                         className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 hover:dark:bg-blue-800 transition-colors group text-white"

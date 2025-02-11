@@ -119,7 +119,7 @@ const Project = ({
                   </p>
                 </div>
                 <Dialog.Close asChild>
-                  <button className="absolute text-lg top-3 right-3 text-gray-400 hover:text-gray-600">
+                  <button className="absolute text-4xl top-3 right-3 text-gray-400 hover:text-gray-600">
                     <span className="sr-only">Close</span>
                     &times;
                   </button>
