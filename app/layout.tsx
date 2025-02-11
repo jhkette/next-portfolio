@@ -11,9 +11,9 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: "Your Site Title",
+  title: "Joseph - Portfolio",
   icons: {
-    icon: "/hand.png",
+    icon: "/favicon.ico",
   },
 };
 
@@ -25,7 +25,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <head /> */}
      
         <body className={`${poppins.className} font-poppins bg-gray-100/50 dark:bg-grey-900 text-black dark:text-white overflow-x-hidden`}>
      
