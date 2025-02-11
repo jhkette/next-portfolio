@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import * as Dialog from "@radix-ui/react-dialog";
 import { PROJECT_QUERYResult } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
+import { PortableText, PortableTextReactComponents } from "next-sanity";
 const cardVariants = {
   hidden: { y: 50, opacity: 0 },
   visible: {
@@ -21,6 +22,7 @@ const Project = ({
   projectName,
   projectImage,
   techstack,
+  description,
   link,
 }: PROJECT_QUERYResult[number] & HTMLMotionProps<"div">) => {
   const [ref, inView] = useInView({
@@ -72,7 +74,7 @@ const Project = ({
         </motion.div>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-50" />
+     
         <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-grey-800 rounded-lg p-6 w-[650px] h-fit">
           <Dialog.Title className="text-xl font-medium">
             {projectName}
@@ -88,7 +90,7 @@ const Project = ({
               className="max-w-full h-fit max-h-full object-cover object-top rounded-lg"
               src={urlFor(projectImage?.asset?._ref as string).url()}
             />
-            {link && (
+            {/* {link && (
               <div className="absolute top-0 scale-x-0 group-hover:scale-100 transition-transform origin-left duration-200 ease-linear bg-gray-800 bg-opacity-60 w-full h-full rounded-lg flex items-center gap-4 justify-center">
                 {link.visit && (
                   <Link
@@ -110,7 +112,13 @@ const Project = ({
                   </Link>
                 )}
               </div>
-            )}
+            )} */}
+            <p>{description && (
+                          <PortableText
+                            value={description}
+                            
+                          />
+                        )}</p>
           </div>
           <Dialog.Close asChild>
             <button className="absolute top-3 right-3 text-gray-400 hover:text-gray-600">

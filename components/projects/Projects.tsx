@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
 import { PROJECT_QUERYResult } from "@/sanity.types";
+
 interface Props {
   projectSanity: PROJECT_QUERYResult;
 }
