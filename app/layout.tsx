@@ -1,4 +1,4 @@
-'use client';
+
 import './globals.css'
 import { Poppins } from '@next/font/google'
 import { ThemeProvider } from "@/components/themeprovider"
@@ -10,6 +10,14 @@ const poppins = Poppins({
   variable: '--font-poppins'
 })
 
+export const metadata = {
+  title: "Your Site Title",
+  icons: {
+    icon: "/hand.png",
+  },
+};
+
+
 export default function RootLayout({
   children,
 }: {
@@ -17,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      {/* <head /> */}
      
         <body className={`${poppins.className} font-poppins bg-gray-100/50 dark:bg-grey-900 text-black dark:text-white overflow-x-hidden`}>
      

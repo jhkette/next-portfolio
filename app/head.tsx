@@ -13,7 +13,8 @@ export default function Head() {
         name="apple-mobile-web-app-title"
         content="Portfolio | Joseph - Full Stack Developer"
       />
-      <link rel="icon" href="/hand.png" />
+      {/* <link rel="icon" href="/favicon.ico" />
+  */}
       <title>Portfolio | Joseph - Full Stack Developer</title>
     </>
   );
