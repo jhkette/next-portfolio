@@ -32,7 +32,7 @@ const Project = ({
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <motion.div
-        //@ts-ignore
+          //@ts-ignore
           className="flex flex-col gap-2 bg-white dark:bg-gray-800 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:animate-[subtle-bounce_0.5s_ease-in-out] "
           ref={ref}
           variants={cardVariants}
@@ -47,7 +47,7 @@ const Project = ({
               className="max-w-full h-48 max-h-full object-cover object-top rounded-lg"
               src={urlFor(projectImage?.asset?._ref as string).url()}
             />
-            {link?.visit  && (
+            {link?.visit && (
               <div className="absolute top-0 scale-x-0 group-hover:scale-100 transition-transform origin-left duration-200 ease-linear bg-gray-800 bg-opacity-60 w-full h-full rounded-lg flex items-center gap-4 justify-center">
                 {link?.visit && (
                   <Link
@@ -58,7 +58,6 @@ const Project = ({
                     <BiLinkExternal size={20} />
                   </Link>
                 )}
-               
               </div>
             )}
           </div>
@@ -75,7 +74,9 @@ const Project = ({
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-50" />
         <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-grey-800 rounded-lg p-6 w-[650px] h-fit">
-          <Dialog.Title className="text-xl font-medium">{projectName}</Dialog.Title>
+          <Dialog.Title className="text-xl font-medium">
+            {projectName}
+          </Dialog.Title>
           <Dialog.Description className="mt-2 text-sm text-gray-400">
             <span className="font-medium">Tech Stack:</span> {techstack}
           </Dialog.Description>
@@ -87,10 +88,9 @@ const Project = ({
               className="max-w-full h-fit max-h-full object-cover object-top rounded-lg"
               src={urlFor(projectImage?.asset?._ref as string).url()}
             />
-            {link  && (
-               
+            {link && (
               <div className="absolute top-0 scale-x-0 group-hover:scale-100 transition-transform origin-left duration-200 ease-linear bg-gray-800 bg-opacity-60 w-full h-full rounded-lg flex items-center gap-4 justify-center">
-                {link.visit &&  (
+                {link.visit && (
                   <Link
                     href={link.visit}
                     target="_blank"
@@ -98,8 +98,8 @@ const Project = ({
                   >
                     <BiLinkExternal size={20} />
                   </Link>
-                  ) }
-                
+                )}
+
                 {link.code && (
                   <Link
                     href={link.code}
@@ -108,7 +108,6 @@ const Project = ({
                   >
                     <FaGithub size={20} />
                   </Link>
-              
                 )}
               </div>
             )}
@@ -120,7 +119,7 @@ const Project = ({
             </button>
           </Dialog.Close>
         </Dialog.Content>
-      </Dialog.Portal> 
+      </Dialog.Portal>
     </Dialog.Root>
   );
 };
