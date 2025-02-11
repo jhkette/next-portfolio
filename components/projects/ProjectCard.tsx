@@ -75,14 +75,14 @@ const Project = ({
       </Dialog.Trigger>
       <Dialog.Portal>
      
-        <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-grey-800 rounded-lg p-6 w-[650px] h-fit">
+        <Dialog.Content className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-grey-800 rounded-lg p-6 w-[650px] h-fit mt-8">
           <Dialog.Title className="text-xl font-medium">
             {projectName}
           </Dialog.Title>
           <Dialog.Description className="mt-2 text-sm text-gray-400">
             <span className="font-medium">Tech Stack:</span> {techstack}
           </Dialog.Description>
-          <div className="relative group rounded-lg bg-blue-50 mt-4">
+          <div className="relative group rounded-lg mt-4">
             <Image
               alt={projectImage?.alt as string}
               width={1000}
@@ -90,30 +90,8 @@ const Project = ({
               className="max-w-full h-fit max-h-full object-cover object-top rounded-lg"
               src={urlFor(projectImage?.asset?._ref as string).url()}
             />
-            {/* {link && (
-              <div className="absolute top-0 scale-x-0 group-hover:scale-100 transition-transform origin-left duration-200 ease-linear bg-gray-800 bg-opacity-60 w-full h-full rounded-lg flex items-center gap-4 justify-center">
-                {link.visit && (
-                  <Link
-                    href={link.visit}
-                    target="_blank"
-                    className="bg-white text-black p-2 rounded-lg hover:bg-black hover:text-white transition-all"
-                  >
-                    <BiLinkExternal size={20} />
-                  </Link>
-                )}
-
-                {link.code && (
-                  <Link
-                    href={link.code}
-                    target="_blank"
-                    className="bg-white text-black p-2 rounded-lg hover:bg-black hover:text-white transition-all"
-                  >
-                    <FaGithub size={20} />
-                  </Link>
-                )}
-              </div>
-            )} */}
-            <p>{description && (
+           
+            <p className="p-4">{description && (
                           <PortableText
                             value={description}
                             
@@ -121,7 +99,7 @@ const Project = ({
                         )}</p>
           </div>
           <Dialog.Close asChild>
-            <button className="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+            <button className="absolute text-lg top-3 right-3 text-gray-400 hover:text-gray-600">
               <span className="sr-only">Close</span>
               &times;
             </button>
