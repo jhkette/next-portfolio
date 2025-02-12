@@ -30,7 +30,7 @@ const Project = ({
       opacity: 1,
       transition: { duration: 0.6, ease: "easeInOut" },
     },
-  };
+  }; 
 
   const dialogVariants = {
     hidden: { opacity: 0, scale: 0.9, y: -10 },
