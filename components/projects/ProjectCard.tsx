@@ -9,14 +9,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { PROJECT_QUERYResult } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
-const cardVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeInOut" },
-  },
-};
+
 
 const Project = ({
   projectName,
@@ -29,6 +22,16 @@ const Project = ({
     threshold: 0.2,
     triggerOnce: true,
   });
+
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
   const dialogVariants = {
     hidden: { opacity: 0, scale: 0.9, y: -10 },
     visible: {
