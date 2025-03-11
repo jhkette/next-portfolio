@@ -67,6 +67,7 @@ const Projects = ({ projectSanity }: Props) => {
           .map((p: PROJECT_QUERYResult[number], i: number) => (
             <ProjectCard key={i} {...p} />
           ))}
+         
       </div>
 
       {filteredProjects.length > 6 && (
@@ -76,6 +77,7 @@ const Projects = ({ projectSanity }: Props) => {
           handleClick={() => setViewAll(!viewAll)}
         />
       )}
+            <p className="text-sm italic md:mx-6 lg:mx-auto lg:w-5/6 2xl:w-3/4 my-4 md:my-8">nb. Please click on the icon when hovering to either view a github link or the live site</p>
     </SectionWrapper>
   );
 };
@@ -117,7 +119,9 @@ export const ViewAll = ({
             {title}
           </Link>
         )}
+        <p>nb. Please click on the icon to either view a github link or the live site</p>
       </div>
+      
     </>
   );
 };
