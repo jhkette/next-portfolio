@@ -77,7 +77,7 @@ const Projects = ({ projectSanity }: Props) => {
           handleClick={() => setViewAll(!viewAll)}
         />
       )}
-            <p className="text-base italic md:mx-6 lg:mx-auto lg:w-5/6 2xl:w-3/4 my-4 md:my-8">Please click on the icon when hovering to either view a github link or the live site. Project are arranged
+            <p className="text-sm text-gray-400 md:mx-6 lg:mx-auto lg:w-5/6 2xl:w-3/4 my-4 md:my-8">Please click on the icon when hovering to either view a github link or the live site. Project are arranged
             by tech stack.</p>
     </SectionWrapper>
   );
