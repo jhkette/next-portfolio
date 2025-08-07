@@ -517,14 +517,14 @@ export type PROJECT_QUERYResult = Array<{
 }>;
 
 // Query TypeMap
-import "@sanity/client";
-declare module "@sanity/client" {
-  interface SanityQueries {
-    "*[_type == \"description\" && name == \"Joseph\"]{\n_id, name, description, techStackImages, titles\n}": DESCRIPTION_QUERYResult;
-    "*[_type == \"about\" && aboutTitle == \"Full Stack Developer\"]{\n_id,  about, aboutImage, aboutTitle\n}": ABOUT_QUERYResult;
-    "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
-    "*[_type == \"eduction\"]{\n_id,  institute, degree, duration, desc\n}": EDUCATION_QUERYResult;
-    "*[_type == \"experience\"]{\n_id,  company, position, duration, desc\n}": EXPERIENCE_QUERYResult;
-    "*[_type == \"project\"]{\n    _id,\n    projectName,\n    techstack,\n    description,\n    projectImage,\n    category,\n    link { code, visit }\n  }": PROJECT_QUERYResult;
-  }
-}
+// import "@sanity/client";
+// declare module "@sanity/client" {
+//   interface SanityQueries {
+//     "*[_type == \"description\" && name == \"Joseph\"]{\n_id, name, description, techStackImages, titles\n}": DESCRIPTION_QUERYResult;
+//     "*[_type == \"about\" && aboutTitle == \"Full Stack Developer\"]{\n_id,  about, aboutImage, aboutTitle\n}": ABOUT_QUERYResult;
+//     "*[_type == \"skill\"]{\n_id,  skill, image, category\n}": SKILL_QUERYResult;
+//     "*[_type == \"eduction\"]{\n_id,  institute, degree, duration, desc\n}": EDUCATION_QUERYResult;
+//     "*[_type == \"experience\"]{\n_id,  company, position, duration, desc\n}": EXPERIENCE_QUERYResult;
+//     "*[_type == \"project\"]{\n    _id,\n    projectName,\n    techstack,\n    description,\n    projectImage,\n    category,\n    link { code, visit }\n  }": PROJECT_QUERYResult;
+//   }
+// }
