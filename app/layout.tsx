@@ -2,7 +2,7 @@
 import './globals.css'
 import { Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/themeprovider"
-import { Analytics } from '@vercel/analytics/react';
+
 import { SpeedInsights } from "@vercel/speed-insights/next"
 const poppins = Poppins({
   subsets: ['latin'],
@@ -35,7 +35,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Analytics/>
+         
             <SpeedInsights/>
           {children}
           </ThemeProvider>
