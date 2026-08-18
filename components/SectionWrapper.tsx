@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 const sectionVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.6, ease: 'easeInOut' } }
+    visible: { opacity: 1, transition: { duration: 0.6, ease: 'easeInOut' as const } }
 };
 
 const SectionWrapper = ({ children, id, className }: { children: ReactNode, id: string, className: string }) => {

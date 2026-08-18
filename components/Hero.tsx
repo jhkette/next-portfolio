@@ -4,7 +4,6 @@ import { useTheme } from "next-themes";
 import { Link as ScrollLink } from "react-scroll";
 import Typewriter from "typewriter-effect";
 import { IoIosArrowForward } from "react-icons/io";
-import wavingHand from "@/public/waving-hand.gif";
 import { DESCRIPTION_QUERYResult } from "@/sanity.types";
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import { cn } from "@/lib/utils";
@@ -51,7 +50,7 @@ const Hero = ({ description }: HeroProps) => {
               alt="waving-hand"
               width={30}
               height={30}
-              src={wavingHand}
+              src="/waving-hand.gif"
             />
             <p className="text-lg md:text-xl mt-2 md:mt-1.5">Hey</p>
           </div>

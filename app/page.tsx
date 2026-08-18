@@ -2,7 +2,6 @@ import HomePage from "./HomePage";
 import { sanityFetch } from "@/sanity/lib/live"
 import { DESCRIPTION_QUERY, ABOUT_QUERY, SKILL_QUERY, EDUCATION_QUERY, EXPERIENCE_QUERY, PROJECT_QUERY } from "@/sanity/queries";
 
-
 export default async function page() {
  
   const {data: description} = await sanityFetch({query: DESCRIPTION_QUERY});

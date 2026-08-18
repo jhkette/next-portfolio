@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   console.log('revalidate path get ran')
   return new Response('GET request not supported')
 }

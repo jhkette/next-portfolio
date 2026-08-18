@@ -1,5 +1,5 @@
 import { project } from "@/types/main";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-scroll";
 import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
@@ -21,10 +21,18 @@ const Projects = ({ projectSanity }: Props) => {
     ),
   ];
 
-  const [category, setCategory] = useState(categories[0]);
+  const initialCategory = categories.includes("MERN Stack")
+    ? "MERN Stack"
+    : categories[0] || "";
+  const [category, setCategory] = useState(initialCategory);
 
   const [filteredProjects, setFilteredProjects] =
-    useState<PROJECT_QUERYResult>(projects);
+    useState<PROJECT_QUERYResult>(
+      projects.filter(
+        (project) =>
+          project.category?.toLowerCase() === initialCategory.toLowerCase()
+      )
+    );
   const [viewAll, setViewAll] = useState(false);
 
   const filterProjects = (cat: string) => {
@@ -37,13 +45,6 @@ const Projects = ({ projectSanity }: Props) => {
       )
     );
   };
-
-  useEffect(() => {
-    filterProjects(
-      categories.includes("MERN Stack") ? "MERN Stack" : categories[0] || ""
-    );
-    //
-  },[]);
 
   return (
     <SectionWrapper id="projects" className="mx-4 md:mx-0 min-h-screen">
