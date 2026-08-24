@@ -5,7 +5,7 @@
   <i>Next Portfolio built in Next.js + TypeScript + Tailwind CSS + Firebase</i>
   &middot;
   <br/>
-  <br/>
+  <br/> 
 
   <p align="center">
     <img src="https://img.shields.io/github/forks/jigar-sable/next-portfolio?style=for-the-badge" />
