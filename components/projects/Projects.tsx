@@ -1,5 +1,4 @@
-import { project } from "@/types/main";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-scroll";
 import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
@@ -10,40 +9,59 @@ interface Props {
 }
 
 const Projects = ({ projectSanity }: Props) => {
-
-  const [projects, setProjects] = useState<PROJECT_QUERYResult>(
-    [...projectSanity].reverse()
+  const projects = useMemo<PROJECT_QUERYResult>(
+    () => [...projectSanity].reverse(),
+    [projectSanity]
   );
 
-  const categories = [
-    ...Array.from(
-      new Set(projects.map((s) => s.category).filter((c) => c !== null))
-    ),
-  ];
+  useEffect(() => {
+    console.log("All projects from Sanity:", projects);
+  }, [projects]);
 
-  const initialCategory = categories.includes("MERN Stack")
-    ? "MERN Stack"
-    : categories[0] || "";
-  const [category, setCategory] = useState(initialCategory);
+  const categories = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          projects
+            .map((s) => s.category?.trim())
+            .filter((c): c is string => Boolean(c))
+        )
+      ),
+    [projects]
+  );
 
-  const [filteredProjects, setFilteredProjects] =
-    useState<PROJECT_QUERYResult>(
-      projects.filter(
-        (project) =>
-          project.category?.toLowerCase() === initialCategory.toLowerCase()
-      )
+  const [category, setCategory] = useState("");
+
+  useEffect(() => {
+    if (!categories.length) {
+      setCategory("");
+      return;
+    }
+
+    const hasCurrent = categories.some(
+      (c) => c.toLowerCase() === category.toLowerCase()
     );
+
+    if (!hasCurrent) {
+      setCategory(
+        categories.includes("MERN Stack") ? "MERN Stack" : categories[0]
+      );
+    }
+  }, [categories, category]);
+
+  const filteredProjects = useMemo(
+    () =>
+      projects.filter(
+        (p) => p.category?.toLowerCase().trim() === category.toLowerCase().trim()
+      ),
+    [projects, category]
+  );
+
   const [viewAll, setViewAll] = useState(false);
 
   const filterProjects = (cat: string) => {
     setViewAll(false);
     setCategory(cat);
-    setFilteredProjects(
-      projects.filter(
-        (p: PROJECT_QUERYResult[number]) =>
-          p.category && p.category.toLowerCase() === cat.toLowerCase()
-      )
-    );
   };
 
   return (
@@ -86,14 +104,14 @@ const Projects = ({ projectSanity }: Props) => {
 
 export default Projects;
 
-type MouseEventHandler = (event: React.MouseEvent<HTMLButtonElement>) => void;
+type ClickHandler = () => void;
 
 export const ViewAll = ({
   handleClick,
   title,
   scrollTo,
 }: {
-  handleClick: MouseEventHandler;
+  handleClick: ClickHandler;
   title: string;
   scrollTo: string;
 }) => {
@@ -115,7 +133,6 @@ export const ViewAll = ({
             offset={-60}
             smooth={true}
             duration={500}
-            // @ts-ignore
             onClick={() => handleClick()}
           >
             {title}
